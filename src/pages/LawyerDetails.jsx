@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { getLawyerById, updateLawyerStatus } from "../services/lawyerService";
-import { REJECTION_REASONS } from "../constants/rejectionReasons";
+import { REJECTION_REASONS } from "../utils/constants/rejectionReasons";
 
 const LawyerDetails = () => {
   const { uid } = useParams();

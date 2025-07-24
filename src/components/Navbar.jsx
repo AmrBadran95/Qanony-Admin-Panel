@@ -22,7 +22,9 @@ const Navbar = ({ onMenuClick }) => {
       <h1 className="text-lg font-bold text-gray-800">لوحة التحكم</h1>
       <div className="flex items-center gap-2">
         <span className="text-sm text-gray-600">{admin?.name}</span>
-        <button onClick={logout} className="text-red-600 text-sm">
+        <button
+          onClick={logout}
+          className="text-red-600 text-sm border rounded px-5 py-2">
           تسجيل الخروج
         </button>
       </div>

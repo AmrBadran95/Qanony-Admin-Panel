@@ -1,10 +1,7 @@
 import { NavLink } from "react-router";
 import clsx from "clsx";
 
-const links = [
-  { to: "/", label: "الطلبات" },
-  { to: "/archived", label: "المحفوظات" },
-];
+const links = [{ to: "/", label: "الطلبات" }];
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
