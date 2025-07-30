@@ -6,6 +6,9 @@ import LawyersList from "./../pages/LawyersList";
 import PendingLawyers from "./../pages/PendingLawyers";
 import LawyerDetails from "../pages/LawyerDetails";
 
+import StripeConnectSuccess from "../pages/StripeConnectSuccess";
+import StripeConnectRetry from "../pages/StripeConnectRetry";
+
 const ProtectedRoute = ({ children }) => {
   const { admin, loading } = useAuth();
 
@@ -32,6 +35,12 @@ const AppRoutes = () => {
           <Route path="lawyers/pending" element={<PendingLawyers />} />
           <Route path="lawyers/:uid" element={<LawyerDetails />} />
         </Route>
+
+        <Route
+          path="/stripe-connect/success"
+          element={<StripeConnectSuccess />}
+        />
+        <Route path="/stripe-connect/retry" element={<StripeConnectRetry />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
