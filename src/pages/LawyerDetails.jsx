@@ -83,11 +83,6 @@ const LawyerDetails = () => {
             <p className="text-gray-600">
               تاريخ القيد: {formatDate(lawyer.registrationDate)}
             </p>
-            <p className="text-gray-600">البنك: {lawyer.bankName}</p>
-            <p className="text-gray-600">
-              صاحب الحساب: {lawyer.accountHolderName}
-            </p>
-            <p className="text-gray-600">رقم الحساب: {lawyer.accountNumber}</p>
             <p className="text-gray-600">
               مكالمات: {lawyer.offersCall ? "نعم" : "لا"} بسعر{" "}
               {lawyer.callPrice}ج
