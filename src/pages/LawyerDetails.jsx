@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { getLawyerById, updateLawyerStatus } from "../services/lawyerService";
 import { REJECTION_REASONS } from "../utils/constants/rejectionReasons";
+import { sendNotification } from "../services/notification";
 
 const LawyerDetails = () => {
   const { uid } = useParams();
@@ -33,6 +34,12 @@ const LawyerDetails = () => {
     setSubmitting(true);
     await updateLawyerStatus(uid, "accepted");
     navigate("/admin/lawyers");
+    await sendNotification(
+      lawyer.fcmToken,
+      "تم قبولك",
+      "تم قبول إنضمامك إلينا بعد مراجعة بياناتك.",
+      { type: "lawyer_accepted" }
+    );
   };
 
   const handleReject = async () => {
@@ -40,6 +47,12 @@ const LawyerDetails = () => {
     setSubmitting(true);
     await updateLawyerStatus(uid, "rejected", selectedReasons);
     navigate("/admin/lawyers");
+    await sendNotification(
+      lawyer.fcmToken,
+      "تم رفضك",
+      "تم رفض إنضامامك إلينا يرجى مراجعة بياناتك .",
+      { type: "lawyer_rejected" }
+    );
   };
 
   const formatDate = (date) => {

@@ -9,7 +9,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       <div
         onClick={onClose}
         className={clsx(
-          "fixed inset-0 bg-black bg-opacity-40 z-30 md:hidden transition-opacity",
+          "fixed inset-0  bg-opacity-40 z-30 md:hidden transition-opacity",
           !isOpen && "hidden"
         )}
       />
