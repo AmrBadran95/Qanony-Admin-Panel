@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const StripeConnectSuccess = () => {
   useEffect(() => {
-    window.location.href = "qanony://connect-success";
+    window.location.replace = "qanony://connect-success";
   }, []);
 
   return (
