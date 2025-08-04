@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const StripeConnectRetry = () => {
   useEffect(() => {
-    window.location.reload = "qanony://connect-retry";
+    window.location.href = "qanony://connect-retry";
   }, []);
 
   return (
