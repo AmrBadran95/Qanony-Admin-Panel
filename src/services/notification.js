@@ -1,4 +1,4 @@
-const sendNotification = async ({ fcmToken, title, body, data }) => {
+export const sendNotification = async ({ fcmToken, title, body, data }) => {
   const payload = {
     fcmToken: fcmToken,
     title: title,
@@ -15,5 +15,3 @@ const sendNotification = async ({ fcmToken, title, body, data }) => {
     }
   );
 };
-
-export default { sendNotification };
