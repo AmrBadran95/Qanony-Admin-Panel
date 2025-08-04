@@ -34,12 +34,12 @@ const LawyerDetails = () => {
     setSubmitting(true);
     await updateLawyerStatus(uid, "accepted");
     navigate("/admin/lawyers");
-    await sendNotification(
-      lawyer.fcmToken,
-      "تم قبولك",
-      "تم قبول إنضمامك إلينا بعد مراجعة بياناتك.",
-      { type: "lawyer_accepted" }
-    );
+    await sendNotification({
+      fcmToken: lawyer.fcmToken,
+      title: "تم قبولك",
+      body: "تم قبول إنضمامك إلينا بعد مراجعة بياناتك.",
+      data: { type: "lawyer_accepted" },
+    });
   };
 
   const handleReject = async () => {
@@ -47,12 +47,12 @@ const LawyerDetails = () => {
     setSubmitting(true);
     await updateLawyerStatus(uid, "rejected", selectedReasons);
     navigate("/admin/lawyers");
-    await sendNotification(
-      lawyer.fcmToken,
-      "تم رفضك",
-      "تم رفض إنضامامك إلينا يرجى مراجعة بياناتك .",
-      { type: "lawyer_rejected" }
-    );
+    await sendNotification({
+      fcmToken: lawyer.fcmToken,
+      title: "تم رفضك",
+      body: "تم رفض إنضامامك إلينا يرجى مراجعة بياناتك .",
+      data: { type: "lawyer_rejected" },
+    });
   };
 
   const formatDate = (date) => {
