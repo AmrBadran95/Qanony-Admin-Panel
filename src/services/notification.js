@@ -11,7 +11,7 @@ const sendNotification = async ({ fcmToken, title, body, data }) => {
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: payload,
+      body: JSON.stringify(payload),
     }
   );
 };
